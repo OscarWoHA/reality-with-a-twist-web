@@ -1,10 +1,11 @@
 ---
+import LatestEpisode from "../components/LatestEpisode.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
   <header
-    class="relative pt-24 pb-24 overflow-hidden flex flex-col-reverse md:flex-row items-center justify-between container mx-auto md:px-0 px-3"
+    class="relative pt-24 pb-20 overflow-hidden flex flex-col-reverse md:flex-row items-center justify-between container mx-auto md:px-0 px-3"
   >
     <div class="max-w-2xl">
       <p class="text-xl text-[#EBE9E9] mb-3">It's just a podcast</p>
@@ -20,86 +21,79 @@ import Layout from "../layouts/Layout.astro";
   </header>
   <main>
     <section
-      class="container mx-auto md:px-0 px-3 mb-16 md:mb-24 flex flex-col"
+      class="container mx-auto md:px-0 px-3 mb-16 md:mb-32 flex flex-col"
     >
-      <h2 class="text-center text-4xl font-medium mb-6">Latest Episode</h2>
+      <h2 class="text-center text-4xl font-medium mb-2">Latest Episode</h2>
+      <p class="text-center mb-12 text-gray-300">
+        New episodes every other week
+      </p>
 
-      <article
-        class="rounded-xl bg-gradient-to-r from-[#E05CDB] to-[#1FA4CE] md:h-36 mb-8"
-      >
-        <div
-          class="border-2 border-white border-opacity-20 p-4 rounded-xl flex flex-col md:flex-row h-full items-center gap-4"
-        >
-          <img
-            src="https://media.rss.com/realitywithatwist/20220602_030645_5d62e3e0fdb31656184a802fe7dd3041.jpg"
-            class="w-40 h-full object-cover rounded-xl shadow-xl"
-          />
-          <div>
-            <h3 class="font-bold mb-2">
-              Season 2 Episode 6 - Sweet Defeat &#9679; <span
-                class="font-normal">Jan 13th 2023</span
-              >
-            </h3>
-            <p class="mb-2 text-[#E3E3E3]">
-              What's your favorite baked good? Choose your favorite and see if
-              it wins in our second debate episode of Reality With a Twist.
-            </p>
-          </div>
-          <div class="flex md:flex-col md:w-40 md:ml-auto gap-3 w-full">
-            <a
-              href="#"
-              class="w-full py-1 bg-gradient-to-r from-[#1DB954] to-[#33D356] rounded-full text-center font-medium"
-              >Spotify</a
-            >
-            <a
-              href="#"
-              class="w-full py-1 bg-gradient-to-r from-[#D56DFB] to-[#872EC4] rounded-full text-center font-medium"
-              >Apple</a
-            >
-          </div>
-        </div>
-      </article>
+      <LatestEpisode />
 
       <a
-        href="#"
-        class="mx-auto px-8 py-1 bg-gradient-to-r from-[#1FA4CE] to-[#1b87a8] rounded-full text-lg shadow-lg font-medium"
+        href="https://rss.com/podcasts/realitywithatwist/"
+        class="text-center mx-auto px-8 py-1 bg-gradient-to-r from-[#1FA4CE] to-[#1e90b3] rounded-full text-lg font-medium"
         >Listen to our other Episodes</a
       >
     </section>
 
-    <section class="container mx-auto md:px-0 px-3 mb-16 md:mb-24">
+    <section class="container mx-auto md:px-0 px-3 mb-16 md:mb-32">
       <div class="grid gap-12 md:gap-0 md:grid-cols-3 text-center">
         <article>
-          <p class="font-medium">"I eat rust for breakfast"</p>
-          <p class="text-[#D9D9D9]">- Internet Person, Apple Podcast</p>
+          <p class="font-medium">
+            "I eat rust for breakfast, lunch and dinner. Stop the steal!"
+          </p>
+          <p class="text-[#D9D9D9]">- Average Hoosier, Apple Podcast</p>
         </article>
         <article>
-          <p class="font-medium">"I eat rust for breakfast"</p>
-          <p class="text-[#D9D9D9]">- Internet Person, Apple Podcast</p>
+          <p class="font-medium">
+            "Work it, Gabe! Can we have Gunnar with the computer voice back? I
+            liked computer-Gunnar better..."
+          </p>
+          <p class="text-[#D9D9D9]">- Soundcloud Rapper, Soundcloud</p>
         </article>
         <article>
-          <p class="font-medium">"I eat rust for breakfast"</p>
-          <p class="text-[#D9D9D9]">- Internet Person, Apple Podcast</p>
+          <p class="font-medium">
+            "Reality With a Twist make the most boring topics even more boring.
+            10/10 great podcast, would listen again."
+          </p>
+          <p class="text-[#D9D9D9]">- A guy from Norway, Spotify</p>
         </article>
       </div>
     </section>
   </main>
 
   <footer class="container mx-auto md:px-0 px-3">
-    <article
-      class="mb-16 md:mb-24"
-    >
+    <article class="mb-16 md:mb-24">
       <div
         class="border-2 border-white border-opacity-20 py-16 flex justify-center px-3 rounded-xl"
       >
-        <div class="max-w-2xl text-center">
-          <h2 class="text-4xl font-medium mb-6">About the Podcast</h2>
-          <p class="mb-6">
+        <div class="max-w-3xl flex flex-col">
+          <h2 class="text-4xl font-medium text-center mb-2">
+            About the Podcast
+          </h2>
+          <p class="mb-12 text-gray-300 text-center">
             Join Gabriel, Gunnar, Dylan, Ben, and Jeremy as we make life's most
-            boring topics fascinating. We also try to be funny sometimes. We
-            hope you enjoy!
+            boring topics fascinating.
           </p>
-		  <a href="#" class=" bg-gradient-to-r from-[#9c45ad] to-[#a452db] px-8 py-1 text-lg rounded-full font-medium">Contact Us</a>
+          <p class="mb-3 text-center">
+            Here at Reality With a Twist we're always searching for new boring
+            topics to make fascinating, with topics like:
+          </p><ul class="list-disc ml-8 mb-3">
+            <li>The highest ranked state flag</li><li>
+              Fallen cities of the rust belt
+            </li><li>High school lunches</li>
+            <li class="text-gray-300">Your topic here?</li>
+          </ul><p class="mb-8 text-center">
+            Whether you've got a boring topic, content ideas or want your brand,
+            music or content in our podcast use the button below to reach out
+            and we'll get back to you as soon as possible!
+          </p>
+          <a
+            href="mailto:contact@rwatpod.com"
+            class="self-center text-center bg-gradient-to-r from-[#9c45ad] to-[#a452db] px-8 py-1 text-lg rounded-full font-medium"
+            >Contact Us</a
+          >
         </div>
       </div>
     </article>

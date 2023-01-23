@@ -3,16 +3,54 @@
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Reality With a Twist</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-	</head>
-	<body class="min-h-screen bg-gradient-to-br from-[#AE19A8] to-[#0099CA] text-white flex flex-col">
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <!-- Primary Meta Tags -->
+    <title>Reality With a Twist</title>
+    <meta name="title" content="Reality With a Twist" />
+    <meta
+      name="description"
+      content="It's just a podcast! Join Gabriel, Gunnar, Dylan, Ben, and Jeremy as we make life's most boring topics fascinating."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://metatags.io/" />
+    <meta property="og:title" content="Reality With a Twist" />
+    <meta
+      property="og:description"
+      content="It's just a podcast! Join Gabriel, Gunnar, Dylan, Ben, and Jeremy as we make life's most boring topics fascinating."
+    />
+    <meta
+      property="og:image"
+      content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://metatags.io/" />
+    <meta property="twitter:title" content="Reality With a Twist" />
+    <meta
+      property="twitter:description"
+      content="It's just a podcast! Join Gabriel, Gunnar, Dylan, Ben, and Jeremy as we make life's most boring topics fascinating."
+    />
+    <meta
+      property="twitter:image"
+      content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="min-h-screen bg-gradient-to-br from-[#AE19A8] to-[#0099CA] text-white flex flex-col"
+  >
+    <slot />
+  </body>
 </html>

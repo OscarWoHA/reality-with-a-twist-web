@@ -1,0 +1,62 @@
+---
+import getPodcastFromFeed from "podparse"
+import format from "date-fns/format"
+import enUS from "date-fns/locale/en-US"
+import { parse } from "node-html-parser"
+
+const rssResponse = await fetch("https://media.rss.com/realitywithatwist/feed.xml")
+
+const rss = await rssResponse.text()
+
+const podcast = getPodcastFromFeed(rss)
+const latestEpisode = podcast.episodes[0]
+
+latestEpisode.pubDate = format(new Date(latestEpisode.pubDate), "PP", { locale: enUS })
+
+const parsed = parse(latestEpisode.description)
+
+const firstParagraph = parsed.querySelector("p")
+
+latestEpisode.description = firstParagraph?.innerText || "No description"
+
+export {
+    latestEpisode
+}
+---
+
+
+<article
+class="rounded-xl bg-gradient-to-r from-[#E05CDB] to-[#1FA4CE] md:h-36 mb-8 overflow-hidden"
+>
+<div
+  class="b p-4 rounded-xl flex flex-col md:flex-row h-full items-center gap-4"
+>
+  <img
+    src="https://media.rss.com/realitywithatwist/20220602_030645_5d62e3e0fdb31656184a802fe7dd3041.jpg"
+    class="w-40 h-full object-cover rounded-xl shadow-xl"
+  />
+  <div>
+    <h3 class="font-bold mb-2">
+        {latestEpisode.title}
+        <span class="font-normal"
+        >- {latestEpisode.pubDate}</span
+      >
+    </h3>
+    <p class="mb-2 text-[#E3E3E3]">
+        {latestEpisode.description}
+    </p>
+  </div>
+  <div class="flex flex-wrap md:flex-col w-full md:w-40 md:ml-auto gap-3">
+    <a
+      href="spotify:show:5FQucPDRd0M8VHB5iaH9oq"
+      class="w-full py-1 bg-gradient-to-r from-[#1DB954] to-[#33D356] rounded-full text-center font-medium"
+      >Spotify</a
+    >
+    <a
+      href="https://podcasts.apple.com/us/podcast/reality-with-a-twist/id1631194257?itsct=podcast_box&itscg=30200&ls=1"
+      class="w-full py-1 bg-gradient-to-r from-[#D56DFB] to-[#872EC4] rounded-full text-center font-medium"
+      >Apple</a
+    >
+  </div>
+</div>
+</article>
