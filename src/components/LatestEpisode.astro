@@ -35,26 +35,26 @@ class="rounded-xl bg-gradient-to-r from-[#E05CDB] to-[#1FA4CE] md:h-36 mb-8 over
     src="https://media.rss.com/realitywithatwist/20220602_030645_5d62e3e0fdb31656184a802fe7dd3041.jpg"
     class="w-40 h-full object-cover rounded-xl shadow-xl"
   />
-  <div>
+  <div class="md:max-w-[50%] lg:max-w-[75%]">
     <h3 class="font-bold mb-2">
         {latestEpisode.title}
         <span class="font-normal"
         >- {latestEpisode.pubDate}</span
       >
     </h3>
-    <p class="mb-2 text-[#E3E3E3]">
+    <p class="mb-2 text-[#E3E3E3] md:overflow-ellipsis md:overflow-hidden md:whitespace-nowrap">
         {latestEpisode.description}
     </p>
   </div>
   <div class="flex flex-wrap md:flex-col w-full md:w-40 md:ml-auto gap-3">
     <a
       href="spotify:show:5FQucPDRd0M8VHB5iaH9oq"
-      class="w-full py-1 bg-gradient-to-r from-[#1DB954] to-[#33D356] rounded-full text-center font-medium"
+      class="w-full py-2 bg-gradient-to-r from-[#1DB954] to-[#33D356] rounded-full text-center font-medium hover:scale-105 focus:scale-105 transition-transform outline-none"
       >Spotify</a
     >
     <a
       href="https://podcasts.apple.com/us/podcast/reality-with-a-twist/id1631194257?itsct=podcast_box&itscg=30200&ls=1"
-      class="w-full py-1 bg-gradient-to-r from-[#D56DFB] to-[#872EC4] rounded-full text-center font-medium"
+      class="w-full py-2 bg-gradient-to-r from-[#D56DFB] to-[#872EC4] rounded-full text-center font-medium hover:scale-105 focus:scale-105 transition-transform outline-none"
       >Apple</a
     >
   </div>
